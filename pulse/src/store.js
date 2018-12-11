@@ -44,6 +44,15 @@ export default new Vuex.Store({
         UPDATE_INPUT(state, {target, field, value}) {
             Vue.set(state[target], field, value);
         },
+        CLEAR_USER(state) {
+            state.human1.name = null
+            state.human1.phone = null
+            state.human2.name = null
+            state.human2.phone = null
+        },
+        SOCKET_USER_DATA_SAVED(state, key) {
+            console.log('user data saved!', key)
+        },
     },
     actions: {
         update_input({commit}, {target, field, value}) {
@@ -52,9 +61,7 @@ export default new Vuex.Store({
         save_user({commit, rootState}, data) {
             const {human1, human2} = rootState;
             const key = Math.random().toString(36).substr(2, 9);
-            commit('SAVING_KEY', key)
-            $socket.emit('saveUserData', {key: , human1, human2});
-            $socket.on('userDataSaved')
+            $socket.emit('saveUserData', {key: key, human1, human2});
         },
         clear_beat({commit}, message) {
             commit('ASYNC_CLEAR_BEAT', message)

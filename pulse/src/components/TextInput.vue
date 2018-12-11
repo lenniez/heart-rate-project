@@ -1,6 +1,6 @@
 <template>
   <label>
-    <span class="txt">{{label}}</span>
+    <span class="txt">{{label}}*</span>
     <input :type="type" :name="`${target}${field}`" v-model="input" />
   </label>
 </template>
@@ -36,8 +36,9 @@ export default {
   margin-bottom: 10px;
 }
 input {
+  border-radius: 10px;
   width: 100%;
-  background: rgb(34, 39, 48);
+  background: #4c4e5d;
   color: #fff;
   outline: 0;
   border: 0;

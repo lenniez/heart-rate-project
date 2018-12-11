@@ -13,17 +13,19 @@ export default {
 <style>
 .button {
   border: 0 none;
-  background: #333434;
-  border-radius: 20px;
-  padding: 10px 18px;
-  color: #bbb;
+  background: #F8E71C;
+  border-radius: 10px;
+  padding: 8px 30px;
+  color: #222;
   cursor: pointer;
   font-weight: 600;
-
-  transition: background-color 1s ease-in-out;
+  font-size: 1.1em;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 .button:hover {
-  background: #777;
-  color: #eee;
+  /* background: #777; */
+  opacity: 0.7;
+  /* color: #000; */
 }
 </style>

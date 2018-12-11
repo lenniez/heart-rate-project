@@ -1,11 +1,9 @@
 <template>
   <div class="inner">
     <transition
-      name="slide-right"
+      name="slide-left"
       mode="out-in"
-      @beforeLeave="beforeLeave"
-      @enter="enter"
-      @afterEnter="afterEnter"
+      class="slide-left"
     >
       <router-view class="view"></router-view>
     </transition>
@@ -18,6 +16,13 @@ import store from './store'
 
 export default {
   name: 'app',
+  metaInfo: {
+    meta: [
+      {name: 'apple-mobile-web-app-capable', content: 'yes'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {charset: 'utf-8'},
+    ],
+  },
   store,
   data() {
     return {
@@ -28,28 +33,16 @@ export default {
 
   },
   methods: {
-    beforeLeave(element) {
-      this.prevHeight = getComputedStyle(element).height;
-    },
-    enter(element) {
-      const {height} = getComputedStyle(element).height;
-      element.style.height = this.prevHeight;
-      setTimeout(() => {
-        element.style.height = height;
-      });
-    },
-    afterEnter(element) {
-      element.style.height = 'auto'
-    }
+    
   }
 }
 </script>
 
 <style>
 body {
-
-  background: #4c4e5d;
+  background: #222;
   color: #eee;
+  margin-top: 100px;
 }
 body, input {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -57,8 +50,10 @@ body, input {
   -moz-osx-font-smoothing: grayscale;
 }
 .inner {
-  max-width: 800px;
-  margin: 0 auto;
+  margin: 0 40px;
+}
+.slide-left {
+  transform: translate(0, 0);
 }
 .slide-left-enter-active,
 .slide-left-leave-active,
@@ -67,7 +62,7 @@ body, input {
   transition-duration: 0.5s;
   transition-property: height, opacity, transform;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
-  overflow: hidden;
+
 }
 
 .slide-left-enter,
