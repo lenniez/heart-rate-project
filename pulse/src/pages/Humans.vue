@@ -49,9 +49,6 @@ export default {
 </script>
 
 <style scoped>
-.root {
-  
-}
 .humans {
   display: flex;
   flex-direction: row;
@@ -69,6 +66,7 @@ export default {
   text-align: right;
 }
 .intro {
+  line-height: 2.4;
   font-size: 1.2em;
   margin: 40px 0;
 }
