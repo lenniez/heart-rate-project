@@ -1,6 +1,7 @@
 <template>
   <div class="running">
-    <h1>now ... for four minutes</h1>
+    <span>Now gaze at each other for four minutes.<br />
+    The lights will brighten when the session is over.</span>
   </div>
 </template>
 
@@ -17,16 +18,17 @@ export default {
 
 <style>
 .running {
-  background:#000;
+  background:#222222;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 10%;
   right: 0;
   bottom: 0;
   display: flex;
   justify-items: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
+  font-size: 2em;
 }
 
 h1 {

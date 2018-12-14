@@ -20,7 +20,7 @@ export default {
 }
 
 .heart {
-  opacity: 0.3;
+  opacity: 0.4;
   transition: opacity 0.5s ease-in-out;
   width: 200px;
 }

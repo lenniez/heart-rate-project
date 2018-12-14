@@ -52,15 +52,16 @@ export default {
 .humans {
   display: flex;
   flex-direction: row;
+  margin: 0 0 5% 0;
 }
 .human {
   width: 100%;
 }
 .human2 {
-  margin-right: 40px;
+  /* margin-right: 30px; */
 }
 .human1 {
-  margin-right: 40px;
+  margin-right: 30px;
 }
 .action {
   text-align: right;
@@ -76,6 +77,7 @@ export default {
 }
 .action a {
   color: #f8E71C;
+  font-weight: bold;
   text-decoration: none;
 }
 </style>
